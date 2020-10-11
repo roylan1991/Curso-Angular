@@ -11,11 +11,16 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 
+//Servicios
+import { EquipoService } from './equipo.service';
+import { EquipoComponent } from './equipo/equipo.component';
+
 const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
+  { path: 'equipo/:id', component: EquipoComponent },
   { path: 'nosotros', component: NosotrosComponent },
   { path: '', component: InicioComponent, pathMatch: 'full' },
-  { path: '**', redirectTo:'/', pathMatch: 'full' },
+  { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -23,14 +28,16 @@ const routes: Routes = [
     AppComponent,
     EncabezadoComponent,
     FooterComponent,
-    ContactoComponent, InicioComponent, NosotrosComponent
+    ContactoComponent, InicioComponent, NosotrosComponent, EquipoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    EquipoService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,11 @@
 <div class="mt-5">
     <h1>Nosotros</h1>
 </div>
+
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let eq of equipos, index as i">
+        <h6>Nombre: {{eq.nombre}}</h6>
+        <h6>País: {{eq.pais}}</h6>
+        <a [routerLink]="['/equipo', i]">Leer más..</a>
+    </li>
+</ul>
