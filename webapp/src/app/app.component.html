@@ -1,4 +1,4 @@
-<h1 class="container bg-dark text-white text-center my-4 py-4">[ngIf] show={{show}}</h1>
+<!-- <h1 class="container bg-dark text-white text-center my-4 py-4">[ngIf] show={{show}}</h1>
 <div class="container">
     <button class="btn btn-warning" (click)="show=!show">Acción</button>
     <p class="text-info" *ngIf="show; else showDos">AngularJS es un framework de JavaScript de código abierto,
@@ -75,4 +75,12 @@
             </tr>
         </tbody>
     </table>
+</div> -->
+
+<div class="container">
+    <app-encabezado></app-encabezado>
+
+    <router-outlet></router-outlet>
+    
+    <app-footer></app-footer>
 </div>
